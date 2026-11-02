@@ -27,4 +27,9 @@ for m in media.get("data", []):
                      for d in ins.get("data", [])} if "data" in ins else ins
     posts.append(m)
 out["posts"] = posts if posts else media
+def limpa(o):
+    if isinstance(o, dict): return {k: limpa(v) for k, v in o.items() if k != "paging"}
+    if isinstance(o, list): return [limpa(v) for v in o]
+    return o
+out = limpa(out)
 open("/tmp/insights.json", "w").write(json.dumps(out, ensure_ascii=False))
