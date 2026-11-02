@@ -1,0 +1,30 @@
+name: Estatísticas do público (Instagram da KN)
+on:
+  push:
+    branches: [main]
+    paths: ["tools/insights_ig.py", "posts/insights_pedido.txt"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: instagram
+jobs:
+  insights:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Buscar estatísticas
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: "17841473570396419"
+        run: python3 tools/insights_ig.py
+      - name: Criptografar e salvar
+        run: |
+          mkdir -p posts/_insights
+          openssl rand -out k.bin 32
+          openssl enc -aes-256-cbc -pbkdf2 -salt -in /tmp/insights.json -out posts/_insights/dados.enc -pass file:k.bin
+          openssl pkeyutl -encrypt -pubin -inkey tools/insights_pub.pem -in k.bin -out posts/_insights/chave.enc
+          rm k.bin /tmp/insights.json
+          git config user.name "KN Casa de Integração"
+          git config user.email "kncasadeintegracao@gmail.com"
+          git add posts/_insights
+          git commit -m "Instagram: estatísticas do público (criptografadas) [skip ci]" && git push
