@@ -1,8 +1,10 @@
 name: Publicar no Instagram da KN
 on:
+  schedule:
+    - cron: "*/10 * * * *"
   push:
     branches: [main]
-    paths: ["posts/**/post.json", "posts/teste.txt", "tools/publish_ig.py"]
+    paths: ["posts/**/post.json", "posts/teste.txt"]
   workflow_dispatch:
     inputs:
       modo:
@@ -16,14 +18,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Publicar posts aprovados
+      - name: Publicar posts aprovados cujo horário chegou
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           IG_USER_ID: "17841473570396419"
         run: python3 tools/publish_ig.py ${{ github.event.inputs.modo == 'teste' && 'teste' || '' }}
-      - name: Salvar links dos posts publicados
+      - name: Salvar links no site e nos posts
         run: |
           git config user.name "KN Casa de Integração"
           git config user.email "kncasadeintegracao@gmail.com"
-          git add posts
-          git diff --cached --quiet || (git commit -m "Instagram: links dos posts publicados [skip ci]" && git push)
+          git add posts index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Instagram: post publicado e link no site [skip ci]"
+            git pull --rebase -q origin main && git push
+          fi
