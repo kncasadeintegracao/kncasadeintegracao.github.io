@@ -2,7 +2,7 @@ name: Publicar no Instagram da KN
 on:
   push:
     branches: [main]
-    paths: ["posts/**/post.json"]
+    paths: ["posts/**/post.json", "posts/teste.txt", "tools/publish_ig.py"]
   workflow_dispatch:
     inputs:
       modo:

@@ -64,8 +64,11 @@ def publish(post):
     return mid, link
 
 def main():
-    if len(sys.argv) > 1 and sys.argv[1] == "teste":
-        print(call("GET", IG, fields="id,username,followers_count,media_count")); return
+    info = call("GET", IG, fields="id,username,followers_count,media_count")
+    info["conferido_em"] = time.strftime("%Y-%m-%d %H:%M")
+    json.dump(info, open("posts/_conexao.json", "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    print("Conexão OK:", info)
+    if len(sys.argv) > 1 and sys.argv[1] == "teste": return
     changed = False
     for f in sorted(glob.glob("posts/*/post.json")):
         post = json.load(open(f, encoding="utf-8"))
