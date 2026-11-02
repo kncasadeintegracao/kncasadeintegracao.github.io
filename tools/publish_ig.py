@@ -64,24 +64,35 @@ def publish(post):
     return mid, link
 
 def find_ig():
-    """Descobre o ID da conta do Instagram a partir da própria chave."""
-    tried = {}
-    try:
-        dbg = call("GET", "debug_token", input_token=TOKEN)["data"]
-        for g in dbg.get("granular_scopes", []):
-            if g.get("scope", "").startswith("instagram") and g.get("target_ids"):
-                return g["target_ids"][0], {"via": "debug_token", "scopes": [x.get("scope") for x in dbg.get("granular_scopes", [])]}
-        tried["debug_token"] = dbg.get("scopes")
-    except SystemExit as e: tried["debug_token"] = str(e)[:300]
-    for path, params in [("me/accounts", {"fields": "name,instagram_business_account"}),
-                         ("me", {"fields": "id,name"})]:
+    """Descobre o ID da conta do Instagram a partir da própria chave (usuário do sistema)."""
+    log = {}
+    def tryc(path, **params):
         try:
-            r = call("GET", path, **params); tried[path] = r
-            for pg in r.get("data", []):
-                if pg.get("instagram_business_account"):
-                    return pg["instagram_business_account"]["id"], {"via": path}
-        except SystemExit as e: tried[path] = str(e)[:300]
-    raise SystemExit("Não encontrei a conta do Instagram. Tentativas: " + json.dumps(tried, ensure_ascii=False))
+            r = call("GET", path, **params); log[path] = r; return r
+        except SystemExit as e:
+            log[path] = str(e)[:250]; return {}
+    cands = []
+    me = tryc("me", fields="id,name")
+    for pg in tryc("me/accounts", fields="name,instagram_business_account").get("data", []):
+        if pg.get("instagram_business_account"): cands.append(pg["instagram_business_account"]["id"])
+    bids = [b["id"] for b in tryc("me/businesses", fields="id,name").get("data", [])]
+    for bid in bids:
+        for edge in ("owned_instagram_accounts", "instagram_accounts", "instagram_business_accounts"):
+            for ig in tryc(f"{bid}/{edge}", fields="id,username").get("data", []):
+                cands.append(ig["id"])
+        for edge in ("owned_pages", "client_pages"):
+            for pg in tryc(f"{bid}/{edge}", fields="name,instagram_business_account").get("data", []):
+                if pg.get("instagram_business_account"): cands.append(pg["instagram_business_account"]["id"])
+    if me.get("id"):
+        for edge in ("assigned_instagram_accounts", "assigned_business_asset_groups"):
+            tryc(f"{me['id']}/{edge}")
+    cands.append("17841473570396419")
+    for c in dict.fromkeys(cands):
+        r = tryc(c, fields="id,username")
+        if r.get("username"):
+            return c, {"via": "descoberta", "tentativas": list(log.keys())}
+    print(json.dumps(log, ensure_ascii=False, indent=1))
+    raise SystemExit("Não encontrei a conta do Instagram (detalhes acima).")
 
 def main():
     global IG
