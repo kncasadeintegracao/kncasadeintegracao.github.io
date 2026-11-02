@@ -68,7 +68,7 @@ section.view{display:flex;flex-direction:column;gap:26px;padding-block:24px 8px}
 /* Passos */
 .steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;counter-reset:s}
 .steps li{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;counter-increment:s}
-.steps li::before{content:counter(s);width:34px;height:34px;border-radius:50%;border:1px solid var(--teal);color:var(--teal);display:grid;place-items:center;font-family:var(--display);font-size:18px;font-weight:600}
+.steps li::before{content:counter(s);width:34px;height:34px;border-radius:50%;border:1px solid var(--teal);color:var(--teal);display:grid;place-items:center;font-family:var(--display);font-size:18px;font-weight:600;font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
 .steps b{display:block;font-weight:600;font-size:14.5px}
 .steps p{color:var(--muted);font-size:13.5px}
 
@@ -410,15 +410,15 @@ body::before{background:#1F5558}
         <button class="tile t-grupos" data-go="aprender" data-seg="grupos"><b>Grupos</b><span>Encontros terapêuticos e de orientação</span></button>
         <button class="tile t-cursos" data-go="aprender" data-seg="cursos"><b>Minicursos</b><span>Psicoeducação para famílias, educadores e profissionais</span></button>
         <button class="tile wide" data-go="atend" data-anchor="escola"><b>Clínica-Escola</b><span>Supervisão clínica de profissionais experientes para profissionais em início de carreira ou em formação</span></button>
-        <button class="tile wide outros-prof" data-go="atend" data-anchor="multi"><b>Outros profissionais parceiros</b><span>Pedagogos, psicopedagogos, fonoaudiólogos, nutricionistas, fisioterapeutas, médicos, advogados e demais profissionais de áreas correlatas aos direitos humanos</span></button>
+        <button class="tile wide outros-prof" data-go="atend" data-anchor="multi"><b>Outros profissionais parceiros</b><span>Pedagogos, psicopedagogos, fonoaudiólogos, nutricionistas, fisioterapeutas, enfermeiros, médicos, advogados e demais profissionais de áreas correlatas aos direitos humanos</span></button>
       </div>
     </div>
 
     <div class="wrap">
       <button class="card rf-home" data-go="reflexoes">
         <p class="rf-selo">Reflexão da semana</p>
-        <b>Escolher é também deixar ir</b>
-        <span>Tem dias em que uma decisão pequena pesa como se fosse enorme. Vamos pensar juntos sobre as escolhas e as renúncias?</span>
+        <b>O mundo digital veio para facilitar a nossa vida. E o que a gente faz com isso?</b>
+        <span>Uma conversa sobre telas, pressa e presença, e sobre o jeito que a KN escolheu usar o digital.</span>
         <em>Ler a reflexão →</em>
       </button>
     </div>
@@ -426,12 +426,15 @@ body::before{background:#1F5558}
     <div class="wrap" style="display:flex;flex-direction:column;gap:16px">
       <p class="eyebrow">Como começar</p>
       <ol class="steps">
-        <li><div><b>Você manda uma mensagem</b><p>Pelo WhatsApp, contando um pouco do que procura. Não precisa saber o nome do serviço.</p></div></li>
-        <li><div><b>Acolhimento administrativo</b><p>Nossa equipe explica como funciona, tira dúvidas sobre horários e modalidades.</p></div></li>
-        <li><div><b>Indicação do profissional</b><p>Encaminhamos você para quem melhor atende à sua necessidade.</p></div></li>
+        <li><div><b>Fale com a Kika</b><p>Mande um “Oi” para a Kika, nossa assistente virtual. Ela responde na hora, a qualquer dia e horário.</p></div></li>
+        <li><div><b>A Kika te orienta</b><p>Ela mostra as opções (psicoterapia, avaliação psicológica e neuropsicológica, orientação profissional, grupos, minicursos, outros profissionais) e tira as primeiras dúvidas.</p></div></li>
+        <li><div><b>Agende com a nossa secretaria</b><p>Para marcar, fale com o WhatsApp oficial da KN Casa de Integração®, (11) 94977-2000, de segunda a sexta, das 10h às 16h.</p></div></li>
         <li><div><b>Primeiro encontro</b><p>Presencial na Mooca/SP ou online. É nele que o cuidado começa a tomar forma.</p></div></li>
       </ol>
-      <a class="btn" href="https://wa.me/5511949772000?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20atendimentos%20da%20KN%20Casa%20de%20Integra%C3%A7%C3%A3o." target="_blank" rel="noopener">Conversar pelo WhatsApp</a>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <a class="btn" href="https://wa.me/5511912016881?text=Oi%2C%20Kika!" target="_blank" rel="noopener">Falar com a Kika</a>
+        <a class="btn ghost" href="https://wa.me/5511949772000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener">Agendar pelo WhatsApp oficial</a>
+      </div>
     </div>
 
     <div class="wrap">
@@ -498,7 +501,7 @@ body::before{background:#1F5558}
       <p>O processo dura de 8 a 12 sessões.</p>
       <p class="rf-cred">Conduzida por Katheryne Solange Muniz Nazer · Psicóloga · CRP 06/117.713</p>
       <div class="chips"><span class="chip">Adolescentes</span><span class="chip">Adultos</span><span class="chip">Vestibular</span><span class="chip">Transição de carreira</span></div>
-      <a class="btn" href="https://wa.me/5511949772000?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20sobre%20a%20orienta%C3%A7%C3%A3o%20profissional%20na%20KN%20Casa%20de%20Integra%C3%A7%C3%A3o." target="_blank" rel="noopener">Saber sobre a orientação profissional</a>
+      <a class="btn" href="https://wa.me/5511912016881?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20sobre%20a%20orienta%C3%A7%C3%A3o%20profissional%20na%20KN%20Casa%20de%20Integra%C3%A7%C3%A3o." target="_blank" rel="noopener">Saber sobre a orientação profissional</a>
     </article>
 
 
@@ -506,15 +509,15 @@ body::before{background:#1F5558}
       <h3>Clínica-Escola</h3>
       <p>Espaço de supervisão clínica em que profissionais mais experientes acompanham profissionais em início de carreira ou ainda em formação, sempre sob a responsabilidade técnica da Responsável Técnica da casa. Um trabalho de discussão de casos, aprimoramento técnico e cuidado ético, com sigilo preservado.</p>
       <div class="chips"><span class="chip">Supervisão clínica</span><span class="chip">Para profissionais</span><span class="chip">Responsabilidade técnica</span></div>
-      <a class="btn ghost" href="https://wa.me/5511949772000?text=Ol%C3%A1!%20Gostaria%20de%20saber%20sobre%20a%20supervis%C3%A3o%20cl%C3%ADnica%20na%20Cl%C3%ADnica-Escola." target="_blank" rel="noopener">Saber sobre a Clínica-Escola</a>
+      <a class="btn ghost" href="https://wa.me/5511912016881?text=Ol%C3%A1!%20Gostaria%20de%20saber%20sobre%20a%20supervis%C3%A3o%20cl%C3%ADnica%20na%20Cl%C3%ADnica-Escola." target="_blank" rel="noopener">Saber sobre a Clínica-Escola</a>
     </article>
 
     <article class="card" id="multi">
       <h3>Equipe multiprofissional</h3>
       <p>Na KN, cada pessoa é vista por inteiro. Por isso, reunimos sob o mesmo teto profissionais de diferentes áreas da saúde, da educação e do direito, que conversam entre si para que o cuidado não fique fragmentado.</p>
-      <p>Pedagogos e psicopedagogos acompanham o aprender. Fonoaudiólogos cuidam da comunicação e da linguagem. Nutricionistas olham para a alimentação, e fisioterapeutas, para o corpo em movimento. Médicos e advogados completam essa rede, oferecendo orientação clínica e jurídica quando a vida pede.</p>
+      <p>Pedagogos e psicopedagogos acompanham o aprender. Fonoaudiólogos cuidam da comunicação e da linguagem. Nutricionistas olham para a alimentação, e fisioterapeutas, para o corpo em movimento. Enfermeiros cuidam do acompanhamento em saúde e dos cuidados do dia a dia. Médicos e advogados completam essa rede, oferecendo orientação clínica e jurídica quando a vida pede.</p>
       <p>Cada profissional atua com autonomia técnica e registro no seu conselho, e todos compartilham o mesmo compromisso: escuta, ética e um olhar integrado para quem chega.</p>
-      <div class="chips"><span class="chip">Pedagogia</span><span class="chip">Psicopedagogia</span><span class="chip">Fonoaudiologia</span><span class="chip">Nutrição</span><span class="chip">Fisioterapia</span><span class="chip">Medicina</span><span class="chip">Direito</span></div>
+      <div class="chips"><span class="chip">Pedagogia</span><span class="chip">Psicopedagogia</span><span class="chip">Fonoaudiologia</span><span class="chip">Nutrição</span><span class="chip">Fisioterapia</span><span class="chip">Enfermagem</span><span class="chip">Medicina</span><span class="chip">Direito</span></div>
     </article>
     <footer class="foot">
       <p class="slogan">Cuidar. Formar. Transformar. <svg class="coracao" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.6 1.1 4.3 2.4h2c.7-1.3 2.2-2.4 4.3-2.4 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/></svg></p>
@@ -540,19 +543,19 @@ body::before{background:#1F5558}
         <h3>Pais de adolescentes</h3>
         <p>Encontros para pais e responsáveis conversarem sobre limites, autonomia, telas e as mudanças emocionais da adolescência, com mediação profissional.</p>
         <dl class="meta"><dt>Formato</dt><dd>Encontros semanais</dd><dt>Onde</dt><dd>Presencial (Mooca/SP)</dd></dl>
-        <a class="btn" href="https://wa.me/5511949772000?text=Ol%C3%A1!%20Tenho%20interesse%20no%20grupo%20de%20pais%20de%20adolescentes." target="_blank" rel="noopener">Tenho interesse</a>
+        <a class="btn" href="https://wa.me/5511912016881?text=Ol%C3%A1!%20Tenho%20interesse%20no%20grupo%20de%20pais%20de%20adolescentes." target="_blank" rel="noopener">Tenho interesse</a>
       </article>
       <article class="card">
         <h3>Pessoas que sentem demais</h3>
         <p>Grupo terapêutico sobre sensibilidade emocional, autocobrança e limites nas relações. Um espaço de escuta mútua e acolhimento.</p>
         <dl class="meta"><dt>Formato</dt><dd>Encontros semanais</dd><dt>Onde</dt><dd>Presencial (Mooca/SP)</dd></dl>
-        <a class="btn" href="https://wa.me/5511949772000?text=Ol%C3%A1!%20Tenho%20interesse%20no%20grupo%20Pessoas%20que%20sentem%20demais." target="_blank" rel="noopener">Tenho interesse</a>
+        <a class="btn" href="https://wa.me/5511912016881?text=Ol%C3%A1!%20Tenho%20interesse%20no%20grupo%20Pessoas%20que%20sentem%20demais." target="_blank" rel="noopener">Tenho interesse</a>
       </article>
       <article class="card">
         <h3>Grupo da melhor idade</h3>
         <p>Encontros para conversar sobre envelhecimento, memória, autonomia, vínculos e projetos de vida, em um espaço de escuta, troca e acolhimento, com mediação profissional.</p>
         <dl class="meta"><dt>Formato</dt><dd>Encontros semanais</dd><dt>Onde</dt><dd>Presencial (Mooca/SP)</dd></dl>
-        <a class="btn" href="https://wa.me/5511949772000?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Grupo%20da%20melhor%20idade." target="_blank" rel="noopener">Tenho interesse</a>
+        <a class="btn" href="https://wa.me/5511912016881?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Grupo%20da%20melhor%20idade." target="_blank" rel="noopener">Tenho interesse</a>
       </article>
     </div>
 
@@ -561,13 +564,13 @@ body::before{background:#1F5558}
         <h3>Adolescência. E agora?</h3>
         <p>O que muda no cérebro e nas emoções do adolescente e como a família pode acompanhar essa fase com presença e diálogo.</p>
         <dl class="meta"><dt>Formato</dt><dd>3 aulas gravadas</dd><dt>Para</dt><dd>Pais e responsáveis</dd></dl>
-        <a class="btn ghost" href="https://wa.me/5511949772000?text=Ol%C3%A1!%20Quero%20ser%20avisado(a)%20do%20minicurso%20Adolesc%C3%AAncia.%20E%20agora%3F" target="_blank" rel="noopener">Avise-me quando abrir</a>
+        <a class="btn ghost" href="https://wa.me/5511912016881?text=Ol%C3%A1!%20Quero%20ser%20avisado(a)%20do%20minicurso%20Adolesc%C3%AAncia.%20E%20agora%3F" target="_blank" rel="noopener">Avise-me quando abrir</a>
       </article>
       <article class="card">
         <h3>Sinais emocionais na escola</h3>
         <p>Como reconhecer sinais de sofrimento emocional em crianças e adolescentes e quando encaminhar para avaliação profissional.</p>
         <dl class="meta"><dt>Formato</dt><dd>3 aulas gravadas</dd><dt>Para</dt><dd>Educadores, psicólogos, psicanalistas e outros profissionais interessados</dd></dl>
-        <a class="btn ghost" href="https://wa.me/5511949772000?text=Ol%C3%A1!%20Quero%20ser%20avisado(a)%20do%20minicurso%20Sinais%20emocionais%20na%20escola." target="_blank" rel="noopener">Avise-me quando abrir</a>
+        <a class="btn ghost" href="https://wa.me/5511912016881?text=Ol%C3%A1!%20Quero%20ser%20avisado(a)%20do%20minicurso%20Sinais%20emocionais%20na%20escola." target="_blank" rel="noopener">Avise-me quando abrir</a>
       </article>
     </div>
     <footer class="foot">
@@ -586,8 +589,41 @@ body::before{background:#1F5558}
       <p class="lead">Textos da KN Casa de Integração® sobre saúde, educação e as experiências de cada fase da vida.</p>
     </div>
 
-    <article class="card reflexao destaque" id="rf-2">
+    <article class="card reflexao destaque" id="rf-3">
       <p class="rf-selo">Reflexão da semana</p>
+      <h3>O mundo digital veio para facilitar a nossa vida. E o que a gente faz com isso?</h3>
+      <p class="rf-data">(Katheryne Nazer – nov/26)</p>
+      <div class="rf-texto">
+        <p>Talvez você conheça esta cena: a família reunida no almoço de domingo e cada um olhando para a própria tela. Ninguém brigou, ninguém foi grosseiro. Mas quase ninguém conversou.</p>
+        <p>Eu não sou contra a tecnologia, e acho que seria até injusto ser. Hoje a gente marca consulta pelo celular, fala com quem mora longe, faz terapia de outra cidade e encontra em minutos aquele livro que parecia perdido. O digital chegou para facilitar, e facilita mesmo. A pergunta que me acompanha é outra: o que a gente faz com o tempo e com a atenção que ele nos devolve?</p>
+        <p>A psicanalista Maria Rita Kehl, em <i>O tempo e o cão</i>, pensa o sofrimento do nosso tempo a partir da pressa, de uma vida que corre tanto que quase não sobra espaço para sentir e para elaborar o que nos acontece. Quando tudo vem rápido, a dor também quer ser resolvida rápido, com um vídeo de um minuto ou uma frase pronta. Só que o psiquismo tem outro ritmo. Ele precisa de pausa, de palavra e de alguém que escute.</p>
+        <p>Winnicott me ajuda a olhar para isso com mais esperança. Em <i>O brincar e a realidade</i>, ele fala de um espaço intermediário, entre o mundo de dentro e o mundo de fora, onde a criança brinca e cria. Uma tela pode virar esse lugar de brincar e de criar, ou pode virar só um jeito de não sentir. Muitas vezes, o que faz a diferença é haver presença por perto.</p>
+        <p>Fernando Pessoa, pela voz de Álvaro de Campos, escreveu em “Tabacaria” sobre alguém que se sente nada e, ainda assim, guarda dentro de si todos os sonhos do mundo. Lembro desse poema quando penso em alguém rolando a tela de madrugada, comparando a própria vida com a vida editada dos outros. Dá para se sentir nada. E, ao mesmo tempo, os sonhos continuam ali, esperando um espaço para existir.</p>
+        <p>Foi pensando nisso que a KN Casa de Integração® ganhou um site novo. A ideia é usar o digital a favor do encontro: para você conhecer a casa, entender como funciona cada atendimento, ler uma reflexão com calma e, quando quiser, marcar a sua conversa com a gente em um toque. A tecnologia abre a porta. O cuidado acontece no encontro, presencialmente na Mooca/SP ou online.</p>
+        <p>Deixo um convite para esta semana: escolha um momento do dia para deixar o celular de lado e estar inteiro com alguém, ou com você mesmo. Pode ser um café, uma caminhada, uma conversa sem pressa. Repare no que aparece nesse tempo.</p>
+        <p>Se você sente que as telas têm ocupado um espaço que antes era seu, ou de alguém que você ama, a psicoterapia pode ajudar a entender o que está acontecendo, sem julgamento. Estamos de portas abertas para te receber, aqui no site e na casa.</p>
+      </div>
+      <div class="rf-acoes">
+        <a class="btn" href="https://wa.me/5511949772000?text=Ol%C3%A1%21%20Li%20a%20reflex%C3%A3o%20sobre%20o%20mundo%20digital%20e%20gostaria%20de%20marcar%20uma%20sess%C3%A3o." target="_blank" rel="noopener">Marcar uma sessão</a>
+        <button class="btn ghost" data-go="aprender" data-seg="grupos">Conhecer os grupos</button>
+        <!--IG-RF3-->
+      </div>
+      <div class="rf-assina">
+        <p class="rf-autora">Katheryne Solange Muniz Nazer</p>
+        <p class="rf-cred">Responsável Técnica · KN Casa de Integração®<br>Psicóloga · CRP 06/117.713</p>
+        <p class="rf-cred">São Paulo, 3 de novembro de 2026</p>
+        <p class="rf-lema">Cuidar de pessoas. Formar profissionais. Transformar realidades.</p>
+      </div>
+      <p class="rf-ref">Referências: KEHL, M. R. <i>O tempo e o cão</i>: a atualidade das depressões. São Paulo: Boitempo, 2009. · PESSOA, F. (Álvaro de Campos). Tabacaria. In: <i>Poesias de Álvaro de Campos</i>. Lisboa: Ática, 1944 (poema de 1928). · WINNICOTT, D. W. <i>O brincar e a realidade</i>. Rio de Janeiro: Imago, 1975 (obra original de 1971).</p>
+      <p class="rf-ref">© 2026 KN Casa de Integração®. Todos os direitos reservados.</p>
+    </article>
+
+    <div class="rf-anteriores">
+      <p class="eyebrow" style="margin-bottom:4px">Reflexões anteriores</p>
+      <p class="small">As reflexões ficam guardadas aqui, da mais recente para a mais antiga.</p>
+      <details>
+        <summary>Escolher é também deixar ir <span class="small">(nov/26)</span></summary>
+        <article class="card reflexao" id="rf-2">
       <h3>Escolher é também deixar ir</h3>
       <p class="rf-data">(Katheryne Nazer – nov/26)</p>
       <div class="rf-texto">
@@ -615,10 +651,7 @@ body::before{background:#1F5558}
       <p class="rf-ref">Referências: ANDRADE, C. D. de. <i>José</i>. São Paulo: Companhia das Letras, 2012 (obra original de 1942). · FREUD, S. O mal-estar na civilização. In: <i>Obras completas</i>, v. 18. Trad. P. C. de Souza. São Paulo: Companhia das Letras, 2010 (obra original de 1930). · LISPECTOR, C. <i>A hora da estrela</i>. Rio de Janeiro: Rocco, 1998 (obra original de 1977). · WINNICOTT, D. W. Distorção do ego em termos de verdadeiro e falso self. In: <i>O ambiente e os processos de maturação</i>. Porto Alegre: Artes Médicas, 1983 (obra original de 1960).</p>
       <p class="rf-ref">© 2026 KN Casa de Integração®. Todos os direitos reservados.</p>
     </article>
-
-    <div class="rf-anteriores">
-      <p class="eyebrow" style="margin-bottom:4px">Reflexões anteriores</p>
-      <p class="small">As reflexões ficam guardadas aqui, da mais recente para a mais antiga.</p>
+      </details>
       <details>
         <summary>Como está seu final de ano? <span class="small">(out/26)</span></summary>
         <article class="card reflexao" id="rf-1">
@@ -727,7 +760,7 @@ body::before{background:#1F5558}
         <li><b>Mensal</b><span>Horários fixos ao longo do mês, com mais tranquilidade para a sua agenda</span></li>
       </ul>
       <p class="participar-txt">Envie seu currículo e consulte valores e condições</p>
-      <a class="btn btn-participar" href="https://wa.me/5511949772000?text=Ol%C3%A1%21%20Quero%20participar%20da%20KN%20Casa%20de%20Integra%C3%A7%C3%A3o.%20Gostaria%20de%20enviar%20meu%20curr%C3%ADculo%20e%20consultar%20os%20valores%20e%20as%20condi%C3%A7%C3%B5es." target="_blank" rel="noopener">QUERO PARTICIPAR</a>
+      <a class="btn btn-participar" href="https://wa.me/5511912016881?text=Ol%C3%A1%21%20Quero%20participar%20da%20KN%20Casa%20de%20Integra%C3%A7%C3%A3o.%20Gostaria%20de%20enviar%20meu%20curr%C3%ADculo%20e%20consultar%20os%20valores%20e%20as%20condi%C3%A7%C3%B5es." target="_blank" rel="noopener">QUERO PARTICIPAR</a>
     </article>
 
     <article class="card">
@@ -743,14 +776,14 @@ body::before{background:#1F5558}
       <h3>Palestras e eventos</h3>
       <p>A KN Casa de Integração® realiza palestras, rodas de conversa e eventos sobre saúde física e mental, educação e direitos humanos para escolas, empresas, instituições e grupos, em formato presencial ou online.</p>
       <div class="chips"><span class="chip">Escolas</span><span class="chip">Empresas</span><span class="chip">Instituições</span><span class="chip">Presencial ou online</span></div>
-      <a class="btn" href="https://wa.me/5511949772000?text=Ol%C3%A1%21%20Gostaria%20de%20conversar%20sobre%20uma%20palestra%20ou%20evento%20com%20a%20KN%20Casa%20de%20Integra%C3%A7%C3%A3o." target="_blank" rel="noopener">Convidar para palestra ou evento</a>
+      <a class="btn" href="https://wa.me/5511912016881?text=Ol%C3%A1%21%20Gostaria%20de%20conversar%20sobre%20uma%20palestra%20ou%20evento%20com%20a%20KN%20Casa%20de%20Integra%C3%A7%C3%A3o." target="_blank" rel="noopener">Convidar para palestra ou evento</a>
     </article>
 
     <article class="card">
       <p class="eyebrow">Construir juntos</p>
       <h3>Outras parcerias</h3>
       <p>Tem um projeto, um curso, um evento ou uma ideia que conversa com saúde e educação? Queremos ouvir. A KN está aberta a parcerias com profissionais, instituições e iniciativas que compartilhem dos nossos valores.</p>
-      <a class="btn ghost" href="https://wa.me/5511949772000?text=Ol%C3%A1%21%20Gostaria%20de%20propor%20uma%20parceria%20com%20a%20KN%20Casa%20de%20Integra%C3%A7%C3%A3o." target="_blank" rel="noopener">Propor uma parceria</a>
+      <a class="btn ghost" href="https://wa.me/5511912016881?text=Ol%C3%A1%21%20Gostaria%20de%20propor%20uma%20parceria%20com%20a%20KN%20Casa%20de%20Integra%C3%A7%C3%A3o." target="_blank" rel="noopener">Propor uma parceria</a>
     </article>
     <footer class="foot">
       <p class="slogan">Cuidar. Formar. Transformar. <svg class="coracao" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.6 1.1 4.3 2.4h2c.7-1.3 2.2-2.4 4.3-2.4 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/></svg></p>
@@ -848,5 +881,98 @@ body::before{background:#1F5558}
 })();
 </script>
 
+
+<!-- KIKA: assistente virtual do site -->
+<style>
+.kk-launch{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:60;display:flex;align-items:center;gap:8px;background:var(--teal-deep);color:#fff;border:0;border-radius:999px;padding:6px 16px 6px 6px;box-shadow:0 8px 24px rgba(31,85,88,.35);font:600 14px/1 var(--sans,Montserrat,system-ui,sans-serif);cursor:pointer}
+.kk-launch img{width:40px;height:40px;border-radius:50%;border:2px solid #fff}
+.kk-launch .kk-dot{width:9px;height:9px;border-radius:50%;background:#7BE0A0;box-shadow:0 0 0 2px var(--teal-deep);margin-left:-14px;margin-top:22px}
+.kk-panel{position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:calc(84px + env(safe-area-inset-bottom,0px));width:min(380px,calc(100vw - 24px));height:min(620px,calc(100dvh - 120px));z-index:61;background:var(--bg);border-radius:22px;box-shadow:0 18px 50px rgba(0,0,0,.28);display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line)}
+.kk-panel[hidden]{display:none!important}
+.kk-head{display:flex;align-items:center;gap:10px;padding:12px 14px;background:linear-gradient(135deg,#3F7376,#1F5558);color:#fff}
+.kk-head img{width:44px;height:44px;border-radius:50%;border:2px solid rgba(255,255,255,.8)}
+.kk-head b{display:block;font:600 16px/1.2 var(--display);font-size:20px}
+.kk-head small{font-size:11.5px;opacity:.9}
+.kk-head small i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#7BE0A0;margin-right:5px}
+.kk-x{margin-left:auto;background:rgba(255,255,255,.15);border:0;color:#fff;width:34px;height:34px;border-radius:50%;font-size:18px;cursor:pointer}
+.kk-body{flex:1;overflow-y:auto;padding:14px 12px 6px;display:flex;flex-direction:column;gap:8px;background:radial-gradient(circle at 20% 0%,rgba(81,142,145,.10),transparent 60%)}
+.kk-msg{max-width:86%;padding:10px 12px;border-radius:16px;font-size:14px;line-height:1.45;white-space:pre-line;animation:kkin .25s ease}
+.kk-bot{background:var(--surface);color:var(--fg);border:1px solid var(--line);border-top-left-radius:4px;align-self:flex-start}
+.kk-me{background:#518E91;color:#fff;border-top-right-radius:4px;align-self:flex-end}
+.kk-alert{background:#FFF4E5;color:#5A3A12;border:1px solid #F2D2A4}
+.kk-typing{align-self:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px 14px;display:flex;gap:4px}
+.kk-typing span{width:7px;height:7px;border-radius:50%;background:#518E91;animation:kkdot 1s infinite}
+.kk-typing span:nth-child(2){animation-delay:.15s}.kk-typing span:nth-child(3){animation-delay:.3s}
+.kk-opts{display:flex;flex-wrap:wrap;gap:6px;align-self:stretch;animation:kkin .25s ease}
+.kk-opt{text-decoration:none;display:inline-block;border:1px solid #518E91;background:transparent;color:var(--fg);border-radius:999px;padding:8px 12px;font:500 13px/1.2 var(--sans,Montserrat,system-ui,sans-serif);cursor:pointer;text-align:left}
+.kk-opt b{color:#518E91;margin-right:4px}
+.kk-opt.kk-gold{background:linear-gradient(135deg,#D9B26A,#B88A2E);color:#2a1b05;border:0;font-weight:600}
+.kk-opt:hover,.kk-opt:focus-visible{background:rgba(81,142,145,.12);outline:none}
+.kk-opt.kk-gold:hover{filter:brightness(1.05)}
+.kk-form{display:grid;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px;align-self:stretch}
+.kk-form label{font-size:12px;color:var(--muted);display:grid;gap:3px}
+.kk-form input,.kk-form textarea{font:14px var(--sans,Montserrat,system-ui,sans-serif);padding:9px 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg)}
+.kk-form .kk-chk{display:flex;gap:8px;align-items:flex-start;font-size:11.5px}
+.kk-foot{display:flex;gap:6px;padding:8px 10px calc(10px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:var(--surface)}
+.kk-foot input{flex:1;min-width:0;border:1px solid var(--line);border-radius:999px;padding:10px 14px;font:14px var(--sans,Montserrat,system-ui,sans-serif);background:var(--bg);color:var(--fg)}
+.kk-foot button{border:0;border-radius:50%;width:42px;height:42px;background:#518E91;color:#fff;font-size:18px;cursor:pointer}
+.kk-lgpd{font-size:10.5px;color:var(--muted);text-align:center;padding:2px 10px 6px}
+@keyframes kkin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes kkdot{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+@media (prefers-reduced-motion:reduce){.kk-msg,.kk-opts{animation:none}.kk-typing span{animation:none}}
+</style>
+<button class="kk-launch" id="kkLaunch" type="button" aria-label="Falar com a Kika, assistente virtual"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCACAAIADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDWJppNITTSa9A+cFJppNITTSaAFJppNITTSaAFJppNITTCw9R+dADiaaTTSw9RTSaAFJppNITTSaAFJppNITTSaAFJppNITTSaANwmmk0hNNJoAUmmk0hNNJoAUmmk0hNMJoAcTXSTQL/Y8N6JnjX7FGly6w7nVcDAQdDkkbmyMcDuM85DJEmfMhEmf9oirbaioC7TKSqFB+9fhTj5evTjpSZcWka+rQuJ7+5jVY3W1bzQigLImAFlA7c/Kw6hseprlSa0Zb23mctMsjsRjcZHJx3HJ/ziqFxLG+PLhWIDrg5zQgm0yMmmk0hNNJpkCk00mkJppNACk00mkJppNAG4TTSaQmmk0AKTW14Q0F9dvzEZ7eOMJISHnVXJCEjC5yRnGT6ZrBJqS1uprScTwOUkCsoPsylT+hNRUUnBqDsy6bipJyV0Le28lpO0ErwO69TDKsi/gynFO0+wv9Sn8jT7K5u5e6QxFyPrjpXV/CzwO/iq8a5uy8Ok2zBZGXhpW67FPbjqe3Hc19BaVp1hpVkllptpDaW6DiOJcD6n1PuayqV1DTdnVQwbq+89EfNg8A+NGXI8N32D6hQf50H4f+Nf+hbvf/HP/iq+ncD0owPSsvrUux1f2dDuz5gPw+8bf9C3e/8Ajn/xVMf4f+NVUsfDV/gegUn+dfUWB6UYHpR9al2D+zod2fH2p6fqGmT+RqNjc2cvZJ4ihP0z1/CnaTpV9qryLZxq3lgFizbQM9B9a+tNW02w1axey1Ozhu7ZxzHKuR9R6H3HNeB+P/DF98O9Yj1LSXebR7ttoEnOxuvlufpkq319Ob9vKcWo/EZrB06VRSrNuHW25xGpaLqWn2Ud3dwCOOQ7fvAlT2BHaswmtfxLr9xrE23BitUOUiznn1J7msUmtqTm43qbnNjFh41WsO24931FJppNNJppNaHKbhNNJpCaaTQApNNZsAnrSE0KfnX6igD6r8EaTHofhTTtNjUAxwK0h/vSMNzH8ya2aRPuL/uj+VU7jVtNt7sWk95GkxwNpzxnpk9BXkylrdn1FOm2uWK2OS8XfFrwP4V8Sp4f1jVJI735TMY4GeO33cjzGH3eDnvgcmu5RldFdGDKwBVgcgg9CK8V+JfwDtfF/jqbxFF4gewhvWVr23+z72JChSY2yAMgDqDg8+1ey2VtFZ2UFnbqVhgjWKME5wqgAfoKuagkuXc56UqrnJTWnQldlRGd2CqoJZicAAdSa4bwj8WfA/irxK/h/R9UkkvPmMJkgZI7jbyfLY/e4Ge2RyK7S9toryzntLhS0M8bRSAHGVYEH9DXjXw0+Adr4P8AHUPiKXxBJfw2TM1lb/Z/LYEqVBkbJBwCegGTz7UQULPm3CrKqpxUFp1Pa6xfHWjxa94S1LS5VBMsDGI/3ZFG5CPxAq7b6tptxdm0gvInmGRtGecdcHoauN9xvoaiMtbo6KlNpcslufFW7IBPBppNLMf3j/7x/nUZNesfLik00mkJppNAG4TTSaQmmk0AKTTSxX5h1HIpCaaTQB9h6VdR32l2l7CwaO4gSVSPRlBqvdaJpl1e/bJ7UNLkEncQGI9R3rzP4CeNIJrBPCmozBLmEn7CzHiVDyY/94c4HcfSvXa8urTs7M+lw2IcoqUHYpa9JqcOi3k2jW0F1qKQs1tDO5SOSQD5VLDoDXD+CPi54Z1i2Flr95B4c8QW/wC7vdO1BvIMcg67S/BXPTnPrXotYviPwp4Z8R7f7e0DTdSZRhXuLdWYD0Ddf1oi42syakZ3vB/I5Txv8XPDOj2xstAvIPEfiC4/d2Wnae3nmSQ9NxTgLnrzn0ruNCk1KbRbObWbaC11F4Va5hgcukchHKhj1Aql4c8J+GfDm7+wdA03TWYYZ7e3VWI9C3X9a2qJONrIKcal7zfyM610TTLW9+2QWwWXJIO4kKT6DtVjVbuKw0u7vpmCxW8DyuT2CqT/AEqzXjn7Qnje3g06Twjpswkup8fb2U/6qPr5f+83GR2H1op07uyRWJxDjFym7ngxct8x4J5+lNJpCaaTXqHzYpNNJpCaaTQBuE00mkJppNAhSaaTSE00mgByuyMHRirKcgg4IPqDX0J8BvEHiXX9MvW1mdbm0tWWKCd0/eu+MkFujADHJGeetfPADOwRFLMxAVR1JPQV73deKdJ+Fnguy8OwLHfa6sO+WBW+VJX+ZmkI6DJwB1IA6DmsK6urJanZg3yScm7JHf8Ai7xNpHhbSzf6tciNTkRRLzJM391V7/XoO9ec/wDC99J/6F7Uf+/8deLeI9c1PxBqkmpatdvc3D8ZPCov91R0UewrMJpQw8UveLqY+cpe5oj3s/HjSP8AoXdR/wC/8dNf49aUFO3w5qBPYG4jArwQmmk1X1eHYz+u1u56h4t+NPiLVYHttJt4tGhYYMkbmScj2YgBfwGfevL5HZ3Z3ZmZiSxJyST1JPc00mmk1pGCjsYTqTqO8ncUmmk0hNNJqiBSaaTSE00mgDcJppNITTSaBCk00mmk00mgCezup7O7iu7Z/LnhcPG+ASrDoRnuOtRTSySyvLLI8kjsWd2YlmJ6kk9TUZNNJoGdX4D0ODX7TW7dltxdxwQfZJZ5Cixu86IecgHIYgA9yKo29n9r1TULX+xo4XsrKdngedonRol+Z2znc4IJKDAPTgVn6dq09jp2pWMUUTx6jCkMzNncqq4cbcHg7lHrV6fxZfz376hPb2kt5LYPYzzlWDToybC74ODJt43d8DOamzuaJxsi34004iTT7tFt7aOXTLLYm3y/PkMKlygAweSNxyMFhnrWNrOj3elwW88728kc8k0aNDKHG+JgrjI4OCRyMg54NXL7xXe3umjTrq1tJrZEt1iR1Y+UYU2Bl+bgsoAbswA4qv4i8RXOtQwwTWllbRQTTTRJboyhPNKllAJOFyowO3TpQrhLld2Y5NNJpCaaTVGYpNNJpCaaTQApNNJpCaYTQBuE00mkJppNAhSaaTSE00mgBSaaTSE00mgYpNNJpCaaTQApNNJpCaaTQApNNJpCaaTQApNMJpCaaTQApNNJpCaaTQB//9k=" alt=""><span class="kk-dot"></span>Fale com a Kika</button>
+<section class="kk-panel" id="kkPanel" hidden role="dialog" aria-label="Kika, assistente virtual da KN Casa de Integração">
+  <div class="kk-head"><img src="data:image/jpeg;base64,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" alt=""><div><b>Kika</b><small><i></i>assistente virtual · responde na hora</small></div><button class="kk-x" id="kkClose" type="button" aria-label="Fechar">×</button></div>
+  <div class="kk-body" id="kkBody" aria-live="polite"></div>
+  <form class="kk-foot" id="kkFoot"><input id="kkInput" type="text" placeholder="Escreva sua mensagem…" aria-label="Escreva sua mensagem" autocomplete="off"><button type="submit" aria-label="Enviar">➤</button></form>
+  <div class="kk-lgpd">🔒 Conversa protegida conforme a LGPD · KN Casa de Integração®</div>
+</section>
+<script>
+(function(){
+var AGENDA='5511949772000', KIKA='5511912016881';
+var body=document.getElementById('kkBody'), panel=document.getElementById('kkPanel');
+function wa(n,t){return 'https://wa.me/'+n+'?text='+encodeURIComponent(t)}
+function scroll(){body.scrollTop=body.scrollHeight}
+function add(cls,text){var d=document.createElement('div');d.className='kk-msg '+cls;d.textContent=text;body.appendChild(d);scroll();return d}
+var queue=Promise.resolve();
+function say(text,extra){queue=queue.then(function(){return new Promise(function(r){var t=document.createElement('div');t.className='kk-typing';t.innerHTML='<span></span><span></span><span></span>';body.appendChild(t);scroll();setTimeout(function(){t.remove();add('kk-bot'+(extra?' '+extra:''),text);r()},Math.min(1100,350+text.length*6))})});return queue}
+function opts(list){queue=queue.then(function(){var w=document.createElement('div');w.className='kk-opts';list.forEach(function(o){var b;if(o.href){b=document.createElement('a');b.href=o.href;b.target='_blank';b.rel='noopener'}else{b=document.createElement('button');b.type='button';b.onclick=function(){add('kk-me',o.echo||o.label.replace(/^\d+ /,''));w.remove();o.go()}}b.className='kk-opt'+(o.gold?' kk-gold':'');b.innerHTML=o.num?'<b>'+o.num+'</b>'+o.label:o.label;w.appendChild(b)});body.appendChild(w);scroll()});return queue}
+function agendar(serv){return {label:'📅 Agendar pelo WhatsApp oficial',gold:true,href:wa(AGENDA,'Olá! Gostaria de agendar '+serv+' na KN Casa de Integração.')}}
+var back={label:'↩ Voltar ao menu',go:menu}, recado={label:'✉️ Deixar uma mensagem',go:msg};
+function fim(serv){say('Posso te ajudar com mais alguma coisa? 💚');opts([serv?agendar(serv):null,back,recado].filter(Boolean))}
+var MENU=[
+ ['1','Psicoterapia',psico],['2','Avaliação psicológica e neuropsicológica',aval],['3','Orientação profissional',orient],
+ ['4','Grupos',function(){grupos()}],['5','Minicursos',function(){mini()}],['6','Outros profissionais',outros],
+ ['7','Parcerias e trabalhe com a gente',function(){parc()}],['8','Endereço, horários e valores',info],['9','Deixar uma mensagem',msg]];
+function menu(){say('Como posso te ajudar? Escolha uma opção:');opts(MENU.map(function(m){return {num:m[0],label:m[1],echo:m[1],go:m[2]}}))}
+function psico(){say('A psicoterapia é um espaço de escuta para compreender o que se repete, o que dói e o que pode ser transformado. 💚\n\nAtendemos crianças, adolescentes e adultos, presencialmente na Mooca/SP ou online, com escuta baseada na ciência psicológica e/ou na leitura psicanalítica.\n\nNossa equipe:\n• Katheryne Solange Muniz Nazer – Psicóloga, Neuropsicóloga · CRP 06/117.713 · Responsável Técnica\n• Alexsandra Maria Pereira de Sousa Garcia – Psicóloga · CRP 06/188.661\n• Bianca Gomes Parlato – Psicanalista');fim('psicoterapia')}
+function aval(){say('Avaliação psicológica: um processo em várias sessões que investiga aspectos emocionais, comportamentais e de personalidade, conforme a demanda.\n\nAvaliação neuropsicológica: investiga atenção, memória, linguagem e funções executivas e, quando indicado, aspectos emocionais e de personalidade.\n\nAs duas terminam com um documento técnico e uma devolutiva cuidadosa.');fim('avaliação psicológica ou neuropsicológica')}
+function orient(){say('A orientação profissional é para adolescentes, jovens no vestibular e adultos em transição de carreira. 🧭\n\nSão cerca de um mês e meio, de 8 a 12 encontros, com os instrumentos indicados para cada caso e devolutiva presencial. Conduzida por Katheryne Solange Muniz Nazer, Responsável Técnica da KN.');fim('orientação profissional')}
+function grupos(qual){say('Os grupos da KN são encontros semanais, presenciais na Mooca/SP e/ou online. Turmas em formação:\n\n• Pais de adolescentes\n• Pessoas que sentem demais\n• Grupo da melhor idade'+(qual?'\n\nVocê se interessou pelo '+qual+'. Que bom! 💚':''));say('Quer entrar na lista de interesse? Deixe seu contato que avisamos assim que a turma abrir.');opts([{label:'✍️ Entrar na lista de interesse',gold:true,go:function(){msg('Interesse em grupo'+(qual?': '+qual:''))}},back])}
+function mini(qual){say('Nossos minicursos têm 3 aulas gravadas:\n\n• Adolescência. E agora? (para pais e responsáveis)\n• Sinais emocionais na escola (para educadores, psicólogos, psicanalistas e outros profissionais)'+(qual?'\n\nVocê se interessou por "'+qual+'". 💚':''));say('Quer ser avisado(a) quando abrirem as inscrições?');opts([{label:'🔔 Quero ser avisado(a)',gold:true,go:function(){msg('Aviso de minicurso'+(qual?': '+qual:''))}},back])}
+function outros(){say('A KN Casa de Integração® reúne pedagogos, psicopedagogos, fonoaudiólogos, nutricionistas, fisioterapeutas, enfermeiros, médicos, advogados e outros profissionais, cada um com autonomia técnica e registro no seu conselho.\n\nNa área médica:\n• Yorisley Lavina Hernandez – Médico de Família e Geriatra · CRM-SP 177.690\n• Beatriz Kerr de Mendonça – Médica Psiquiatra · CRM-SP 114.417 · RQE 26.677\n\nMe conte qual área você procura, que nossa equipe te orienta.');opts([agendar('um atendimento com outro profissional'),recado,back])}
+function parc(sub){var t={atender:'Fazer parte da KN é atender numa casa pensada para o encontro: salas para atendimento, recepção, sala de espera e sala de grupos, palestras e reuniões. Você pode atender por período, por dia ou no plano mensal.\n\nEnvie seu currículo para kncasadeintegracao@gmail.com e deixe seu contato aqui.',palestra:'A KN realiza palestras, rodas de conversa e eventos sobre saúde física e mental, educação e direitos humanos para escolas, empresas e instituições, presencialmente ou online.\n\nConte o tema, o público e a data que você imagina.',escola:'A Clínica-Escola é o nosso espaço de supervisão clínica: profissionais mais experientes acompanham profissionais em início de carreira ou em formação, sempre sob a responsabilidade técnica da casa.'};
+ if(sub){say(t[sub]);opts([{label:'✉️ Deixar meu contato',gold:true,go:function(){msg({atender:'Quero fazer parte da KN',palestra:'Palestra ou evento',escola:'Clínica-Escola'}[sub])}},back]);return}
+ say('Que alegria saber do seu interesse em caminhar com a KN. 💚 Sobre o que você quer conversar?');opts([{label:'Atender na KN',go:function(){parc('atender')}},{label:'Palestras e eventos',go:function(){parc('palestra')}},{label:'Clínica-Escola (supervisão)',go:function(){parc('escola')}},back])}
+function info(){say('📍 Rua Etiópia, 81 · Mooca/SP\n🕒 Atendimentos: segunda a sexta, das 8h às 20h, e sábados, das 8h às 12h\n💬 Secretaria: segunda a sexta, das 10h às 16h\n💻 Atendemos também online.\n\nOs valores variam conforme o atendimento e o profissional. Nossa secretaria informa certinho pelo WhatsApp oficial.\n\n🌐 kncasadeintegracao.com\n📸 @kncasadeintegracao\n✉️ kncasadeintegracao@gmail.com');opts([{label:'💬 Consultar valores no WhatsApp oficial',gold:true,href:wa(AGENDA,'Olá! Gostaria de saber os valores dos atendimentos da KN Casa de Integração.')},back])}
+function msg(assunto){if(typeof assunto!=='string')assunto='';say('Deixe sua mensagem e nossa equipe retorna assim que possível. 💚\nPor favor, não envie aqui informações detalhadas de saúde: esses assuntos são tratados com o profissional, com todo o sigilo.');queue=queue.then(function(){var f=document.createElement('form');f.className='kk-form';f.innerHTML='<label>Nome completo<input name="n" required autocomplete="name"></label><label>WhatsApp<input name="w" required inputmode="tel" autocomplete="tel" placeholder="(11) 9…"></label><label>E-mail<input name="e" type="email" required autocomplete="email"></label><label>Mensagem<textarea name="m" rows="3" required></textarea></label><label class="kk-chk"><input type="checkbox" name="c" required> Autorizo o uso destes dados apenas para que a KN Casa de Integração® entre em contato comigo, conforme a LGPD (Lei 13.709/2018).</label><button class="kk-opt kk-gold" type="submit">Enviar mensagem</button>';if(assunto)f.m.value=assunto+'. ';f.onsubmit=function(ev){ev.preventDefault();var t='Recado pelo site (Kika)'+(assunto?' – '+assunto:'')+'\nNome: '+f.n.value+'\nWhatsApp: '+f.w.value+'\nE-mail: '+f.e.value+'\nMensagem: '+f.m.value;window.open(wa(KIKA,t),'_blank');f.remove();add('kk-me','Mensagem enviada ✓');say('Obrigada, '+f.n.value.split(' ')[0]+'! Sua mensagem foi registrada com carinho. 💚 Nossa equipe responde de segunda a sexta, das 10h às 16h.');opts([back])};body.appendChild(f);scroll()})}
+var RISCO=/(morrer|me matar|suic|me machucar|me cortar|n[aã]o aguento mais|acabar com tudo|sem sa[ií]da|viol[eê]ncia|abus|emerg[eê]ncia|socorro)/i;
+function risco(){say('Sinto muito que você esteja passando por isso, e fico feliz que tenha escrito. 💚\n\nSe houver risco imediato à sua vida ou à de outra pessoa, ligue agora para o 192 (SAMU) ou vá ao pronto-socorro mais próximo. Para conversar com alguém agora, o CVV atende gratuitamente, 24 horas, pelo 188 ou em cvv.org.br.\n\nEste canal não realiza atendimento de urgência, mas a nossa equipe pode te ajudar a agendar um acolhimento assim que possível.','kk-alert');opts([{label:'📞 Ligar 188 (CVV)',href:'tel:188'},{label:'🚑 Ligar 192 (SAMU)',href:'tel:192'},recado,back])}
+function texto(t){if(RISCO.test(t))return risco();var x=t.toLowerCase();var map=[[/^\s*1\s*$|psicoterap|terapia/,psico],[/^\s*2\s*$|avalia/,aval],[/^\s*3\s*$|orienta/,orient],[/^\s*4\s*$|grupo/,function(){grupos()}],[/^\s*5\s*$|curso/,function(){mini()}],[/^\s*6\s*$|nutri|fono|fisio|pedag|m[eé]dic|advog|enferm/,outros],[/^\s*7\s*$|parceri|curr[ií]cul|palestr|sala|alug/,function(){parc()}],[/^\s*8\s*$|endere|hor[aá]rio|valor|pre[cç]o|quanto custa/,info],[/^\s*9\s*$|recado|mensagem/,msg],[/agend|marcar|consulta/,function(){say('Para agendar, fale com a nossa secretaria pelo WhatsApp oficial. 💚');opts([agendar('um atendimento'),back])}]];for(var i=0;i<map.length;i++){if(map[i][0].test(x))return map[i][1]()}say('Desculpe, não consegui entender. Pode escolher uma das opções do menu? 💚');menu()}
+document.getElementById('kkFoot').onsubmit=function(e){e.preventDefault();var i=document.getElementById('kkInput');var t=i.value.trim();if(!t)return;add('kk-me',t);i.value='';texto(t)};
+var started=false;
+function open(topic){panel.hidden=false;document.getElementById('kkLaunch').hidden=true;if(!started){started=true;say('Olá! Que bom ter você aqui. 💚 Eu sou a Kika, assistente virtual da KN Casa de Integração®.');say('Se você estiver em situação de risco imediato, ligue 192 (SAMU). Para apoio emocional, o CVV atende 24h pelo 188. Este canal não realiza atendimento de urgência.','kk-alert')}
+ if(topic){topic()}else if(!started||body.querySelectorAll('.kk-opts').length===0){menu()}}
+window.kikaOpen=open;
+document.getElementById('kkLaunch').onclick=function(){open()};
+document.getElementById('kkClose').onclick=function(){panel.hidden=true;document.getElementById('kkLaunch').hidden=false};
+// botões do site que vão para a Kika
+document.querySelectorAll('a[href^="https://wa.me/'+KIKA+'"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=decodeURIComponent((a.href.split('text=')[1]||'')).toLowerCase();var f=null;
+ if(/orienta[cç][aã]o profissional/.test(t))f=orient;else if(/cl[ií]nica-escola|supervis/.test(t))f=function(){parc('escola')};else if(/pais de adolescentes/.test(t))f=function(){grupos('grupo Pais de adolescentes')};else if(/sentem demais/.test(t))f=function(){grupos('grupo Pessoas que sentem demais')};else if(/melhor idade/.test(t))f=function(){grupos('Grupo da melhor idade')};else if(/adolesc[eê]ncia\. e agora/.test(t))f=function(){mini('Adolescência. E agora?')};else if(/sinais emocionais/.test(t))f=function(){mini('Sinais emocionais na escola')};else if(/participar|curr[ií]culo/.test(t))f=function(){parc('atender')};else if(/palestra/.test(t))f=function(){parc('palestra')};else if(/parceria/.test(t))f=function(){parc()};
+ open(f)})});
+})();
+</script>
+<!-- /KIKA -->
 
 </body></html>
