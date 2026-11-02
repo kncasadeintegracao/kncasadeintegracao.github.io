@@ -3,7 +3,7 @@ Roda no GitHub Actions; a chave fica no segredo IG_TOKEN (nunca no código)."""
 import json, os, sys, time, glob, urllib.request, urllib.parse, subprocess
 
 TOKEN = os.environ["IG_TOKEN"]
-IG = os.environ.get("IG_USER_ID", "17841473570396419")
+IG = None
 API = "https://graph.facebook.com/v21.0"
 SITE = "https://kncasadeintegracao.com"
 
@@ -63,7 +63,30 @@ def publish(post):
     link = call("GET", mid, fields="permalink")["permalink"]
     return mid, link
 
+def find_ig():
+    """Descobre o ID da conta do Instagram a partir da própria chave."""
+    tried = {}
+    try:
+        dbg = call("GET", "debug_token", input_token=TOKEN)["data"]
+        for g in dbg.get("granular_scopes", []):
+            if g.get("scope", "").startswith("instagram") and g.get("target_ids"):
+                return g["target_ids"][0], {"via": "debug_token", "scopes": [x.get("scope") for x in dbg.get("granular_scopes", [])]}
+        tried["debug_token"] = dbg.get("scopes")
+    except SystemExit as e: tried["debug_token"] = str(e)[:300]
+    for path, params in [("me/accounts", {"fields": "name,instagram_business_account"}),
+                         ("me", {"fields": "id,name"})]:
+        try:
+            r = call("GET", path, **params); tried[path] = r
+            for pg in r.get("data", []):
+                if pg.get("instagram_business_account"):
+                    return pg["instagram_business_account"]["id"], {"via": path}
+        except SystemExit as e: tried[path] = str(e)[:300]
+    raise SystemExit("Não encontrei a conta do Instagram. Tentativas: " + json.dumps(tried, ensure_ascii=False))
+
 def main():
+    global IG
+    IG, how = find_ig()
+    print("Conta do Instagram encontrada:", IG, how)
     info = call("GET", IG, fields="id,username,followers_count,media_count")
     info["conferido_em"] = time.strftime("%Y-%m-%d %H:%M")
     json.dump(info, open("posts/_conexao.json", "w", encoding="utf-8"), ensure_ascii=False, indent=2)
