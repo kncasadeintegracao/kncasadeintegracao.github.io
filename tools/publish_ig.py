@@ -135,9 +135,16 @@ def site_acao(post, pasta):
 
 
 def colocar_link_no_site(marcador, link, rotulo="Ver no Instagram"):
-    if not (marcador and link and os.path.exists(INDEX)):
+    if not (marcador and os.path.exists(INDEX)):
         return
     html = open(INDEX, encoding="utf-8").read()
+    # o item da série desse dia só aparece no site quando o post sai
+    rev = html.replace(f' hidden data-agendado="serie-{marcador}"', f' data-agendado="serie-{marcador}"')
+    if rev != html:
+        html = rev
+        open(INDEX, "w", encoding="utf-8").write(html)
+    if not link:
+        return
     botao = (f'<!--IGL:{marcador}--><a class="btn ghost" href="{link}" target="_blank" rel="noopener">'
              f'{rotulo}</a><!--/IGL-->')
     if f"<!--IG:{marcador}-->" in html:
