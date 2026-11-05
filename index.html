@@ -1007,6 +1007,7 @@ var started=false;
 function open(topic){if(panel.hidden&&started){zerar()}panel.hidden=false;document.getElementById('kkLaunch').hidden=true;if(!started){started=true;say('Olá! Que bom ter você aqui. 💚 Eu sou a Kika, assistente virtual da KN Casa de Integração®.');say('Se você estiver em situação de risco imediato, ligue 192 (SAMU). Para apoio emocional, o CVV atende 24h pelo 188. Este canal não realiza atendimento de urgência.','kk-alert')}
  if(topic){topic()}else if(!started||body.querySelectorAll('.kk-opts').length===0){menu()}}
 window.kikaOpen=open;
+try{if(/(^|[?&#])kika(\b|=|$)/i.test(location.search+location.hash)){setTimeout(function(){open()},700)}}catch(e){}
 document.getElementById('kkLaunch').onclick=function(){open()};
 function zerar(){queue=Promise.resolve();body.innerHTML='';started=false;var i=document.getElementById('kkInput');if(i)i.value=''}
 document.getElementById('kkClose').onclick=function(){panel.hidden=true;document.getElementById('kkLaunch').hidden=false;zerar()};
