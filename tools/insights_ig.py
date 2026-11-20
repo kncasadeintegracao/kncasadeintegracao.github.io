@@ -19,10 +19,23 @@ for b in ("city", "age", "gender"):
                                   metric_type="total_value", breakdown=b, timeframe="this_month")
     out[f"engajados_{b}"] = call(f"{IG}/insights", metric="engaged_audience_demographics", period="lifetime",
                                  metric_type="total_value", breakdown=b, timeframe="this_month")
-media = call(f"{IG}/media", fields="id,timestamp,media_type,media_product_type,like_count,comments_count,permalink", limit=60)
+media = call(f"{IG}/media", fields="id,timestamp,media_type,media_product_type,like_count,comments_count,permalink,caption", limit=100)
+out["conta_insights_30d"] = call(f"{IG}/insights", metric="profile_links_taps,website_clicks,profile_views,follows_and_unfollows,reach,views",
+                                 period="day", metric_type="total_value",
+                                 since=int((datetime.datetime.utcnow() - datetime.timedelta(days=28)).timestamp()),
+                                 until=int(datetime.datetime.utcnow().timestamp()))
+out["conta_toques_link_30d"] = call(f"{IG}/insights", metric="profile_links_taps", period="day", metric_type="total_value",
+                                    breakdown="contact_button_type",
+                                    since=int((datetime.datetime.utcnow() - datetime.timedelta(days=28)).timestamp()),
+                                    until=int(datetime.datetime.utcnow().timestamp()))
 posts = []
 for m in media.get("data", []):
-    ins = call(f"{m['id']}/insights", metric="reach,saved,shares,total_interactions")
+    m["caption"] = (m.get("caption") or "")[:300]
+    ins = call(f"{m['id']}/insights", metric="reach,saved,shares,total_interactions,views,profile_visits,follows")
+    if "erro" in ins:
+        ins = call(f"{m['id']}/insights", metric="reach,saved,shares,total_interactions,views")
+    if "erro" in ins:
+        ins = call(f"{m['id']}/insights", metric="reach,saved,shares,total_interactions")
     m["insights"] = {d["name"]: d.get("values", [{}])[0].get("value", d.get("total_value", {}).get("value"))
                      for d in ins.get("data", [])} if "data" in ins else ins
     posts.append(m)
