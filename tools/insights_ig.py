@@ -28,6 +28,14 @@ out["conta_toques_link_30d"] = call(f"{IG}/insights", metric="profile_links_taps
                                     breakdown="contact_button_type",
                                     since=int((datetime.datetime.utcnow() - datetime.timedelta(days=28)).timestamp()),
                                     until=int(datetime.datetime.utcnow().timestamp()))
+def janela(d0, d1):
+    agora = datetime.datetime.utcnow()
+    return call(f"{IG}/insights", metric="profile_links_taps,website_clicks,profile_views,reach,views",
+                period="day", metric_type="total_value",
+                since=int((agora - datetime.timedelta(days=d0)).timestamp()),
+                until=int((agora - datetime.timedelta(days=d1)).timestamp()))
+out["conta_ultimos_7d"] = janela(7, 0)
+out["conta_7d_anteriores"] = janela(14, 7)
 posts = []
 for m in media.get("data", []):
     m["caption"] = (m.get("caption") or "")[:300]
