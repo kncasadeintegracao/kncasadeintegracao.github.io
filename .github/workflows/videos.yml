@@ -1,0 +1,30 @@
+name: Vídeos publicados para avaliação (Instagram da KN)
+on:
+  push:
+    branches: [main]
+    paths: ["posts/videos_pedido.txt"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: instagram
+jobs:
+  videos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Baixar vídeos
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: python3 tools/videos_ig.py
+      - name: Criptografar e salvar
+        run: |
+          mkdir -p posts/_videos
+          tar -C /tmp -cf /tmp/v.tar videos
+          openssl rand -out k.bin 32
+          openssl enc -aes-256-cbc -pbkdf2 -salt -in /tmp/v.tar -out posts/_videos/videos.enc -pass file:k.bin
+          openssl pkeyutl -encrypt -pubin -inkey tools/insights_pub.pem -in k.bin -out posts/_videos/chave.enc
+          rm -rf k.bin /tmp/v.tar /tmp/videos
+          git config user.name "KN Casa de Integração"
+          git config user.email "kncasadeintegracao@gmail.com"
+          git add posts/_videos
+          git commit -m "Instagram: vídeos para avaliação (criptografados) [skip ci]" && git push
