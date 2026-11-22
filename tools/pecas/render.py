@@ -130,7 +130,7 @@ def tpl_closing(d):
       <div class="t" style="font-size:58px;margin-top:6px">{d['t']}</div>
       <div style="font-size:26px;line-height:1.7;color:#D7E6E3">{items}</div>
       <div style="width:100%;height:300px;border-radius:24px;background:url('file://{d['photo']}') 50% 50%/cover;box-shadow:0 20px 40px rgba(0,0,0,.25)"></div>
-      <div class="s" style="font-size:27px;color:#D7E6E3">{d['s']}<br>Leia mais no site: texto novo da semana.</div>
+      <div class="s" style="font-size:27px;color:#D7E6E3">{d['s']}<br>{d.get('share','Leia mais no site: texto novo da semana.')}</div>
       <div class="pill" style="background:#D9B86E;color:#1F5558;padding:16px 44px;font-size:28px">kncasadeintegracao.com · link na bio</div>
       <div style="margin-top:auto;font-size:22px;line-height:1.5;color:#D7E6E3"><span style="font-family:CG;font-size:30px;color:#fff;font-weight:600">Katheryne Solange Muniz Nazer – RT</span><br>Psicóloga · Neuropsicóloga · CRP 06/117.713<br><i style="font-family:CG;font-size:28px;color:#D9B86E">Cuidar de pessoas. Formar profissionais. Transformar realidades.</i><br><span style="font-size:18px">{CR}</span></div>
     </div>{foot(pal, d.get('page'), True)}"""
