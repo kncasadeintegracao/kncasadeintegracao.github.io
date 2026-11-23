@@ -2,7 +2,7 @@
   "tipo": "story",
   "agendar_para": "2026-11-23T12:35:00-03:00",
   "midia": "midia/2026-11-comprar/seg_story.jpg",
-  "status": "aprovado",
-  "tentativas": 2,
-  "ultimo_erro": "17841473570396419/media: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"A06TyYtA5OrAZHN7KKYOTVm\"}}"
+  "status": "erro",
+  "tentativas": 3,
+  "ultimo_erro": "17841473570396419/media: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"AHR6fIby81q9XX79P_XKWaL\"}}"
 }
