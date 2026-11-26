@@ -3,6 +3,6 @@
   "agendar_para": "2026-11-25T19:35:00-03:00",
   "midia": "midia/2026-11-comprar/qua_story.jpg",
   "status": "aprovado",
-  "tentativas": 1,
-  "ultimo_erro": "17841473570396419/media: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"A0rZ0umVqKj6FSYd50Orwx4\"}}"
+  "tentativas": 2,
+  "ultimo_erro": "17841473570396419/media: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"AYd3PKPx9qc3W-SpwipCLeQ\"}}"
 }
