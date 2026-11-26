@@ -5,7 +5,7 @@
   "capa": "midia/2026-11-comprar/qua_reels_capa.jpg",
   "legenda": "Comprei, e dez minutos depois o vazio voltou.\n\nA compra acalma por um instante, mas o que doía continua lá. Às vezes o que falta é descanso, companhia, uma conversa sem pressa ou um sentido para os dias. E nenhum carrinho dá conta disso.\n\nAntes de comprar, vale perguntar: eu preciso disso? Eu já queria isso ontem? O que estou sentindo agora?\n\nA reflexão da semana, \"Ou isto ou aquilo\", com Bauman, Melanie Klein e Cecília Meireles, está no site (link na bio).\n\nQual dessas perguntas é a mais difícil para você? Responda aqui embaixo.\n\nPara agendar, fale com a KN pelo link da bio.\n\nKatheryne Solange Muniz Nazer – RT · Psicóloga · CRP 06/117.713\nKN Casa de Integração® · Mooca/SP e online\nCuidar de pessoas. Formar profissionais. Transformar realidades.\n© 2026 KN Casa de Integração®. Todos os direitos reservados.\n\n#blackfriday #consumo #vazio #psicanalise #saudemental #kncasadeintegracao",
   "site_marcador": "cpp-qua",
-  "status": "aprovado",
-  "tentativas": 2,
-  "ultimo_erro": "17841473570396419/media: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"A2bOn0K5jrfM7l49jFVdDSL\"}}"
+  "status": "erro",
+  "tentativas": 3,
+  "ultimo_erro": "17841473570396419/media: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"AiYdEiTisjWxfHrGohAIPDB\"}}"
 }
